@@ -6,7 +6,7 @@
 
 ---
 
-Part of the **[veritAI News](https://github.com/veritai-news)**.
+Part of the **[VeritAI News](https://github.com/veritai-news)**.
 
 The veritai API is a high-performance backend gateway built with **Dart Frog**. It serves as the secure data engine for both the Mobile Client and the Web Dashboard.
 
