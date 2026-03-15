@@ -13,7 +13,6 @@ import 'package:veritai_api/src/models/ingestion/ingestion_topic_mapping.dart';
 import 'package:veritai_api/src/models/ingestion/ingestion_usage.dart';
 import 'package:veritai_api/src/services/idempotency_service.dart';
 import 'package:veritai_api/src/services/ingestion/providers/aggregator_provider.dart';
-import 'package:veritai_api/src/utils/article_validator.dart';
 
 /// {@template news_ingestion_service}
 /// Orchestrates the automated ingestion of news from external aggregators.
@@ -398,13 +397,6 @@ class NewsIngestionService {
 
     for (final raw in headlines) {
       _log.finer('Processing draft headline: ${raw.url}');
-      // QUALITY CONTROL: Filter noise and siblings
-      if (!ArticleValidator.validate(raw)) {
-        _log.fine('   [QC] Article rejected: ${raw.url}');
-        skippedCount++;
-        continue;
-      }
-
       final finalHeadline = raw.copyWith(
         status: ContentStatus.ingested,
       );

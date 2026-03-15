@@ -61,73 +61,6 @@ Future<void> main() async {
       toJson: (item) => item.toJson(),
     );
 
-    await _seedCollection<Headline>(
-      db: db,
-      log: log,
-      collectionName: 'headlines',
-      items: getHeadlinesFixturesData(),
-      getId: (item) => item.id,
-      toJson: (item) => item.toJson(),
-    );
-
-    // --- Social & Moderation ---
-    await _seedCollection<Engagement>(
-      db: db,
-      log: log,
-      collectionName: 'engagements',
-      items: getEngagementsFixturesData(),
-      getId: (item) => item.id,
-      toJson: (item) => item.toJson(),
-    );
-
-    await _seedCollection<Report>(
-      db: db,
-      log: log,
-      collectionName: 'reports',
-      items: getReportsFixturesData(),
-      getId: (item) => item.id,
-      toJson: (item) => item.toJson(),
-    );
-
-    await _seedCollection<AppReview>(
-      db: db,
-      log: log,
-      collectionName: 'app_reviews',
-      items: getAppReviewsFixturesData(),
-      getId: (item) => item.id,
-      toJson: (item) => item.toJson(),
-    );
-
-    // --- Analytics Dashboard Data ---
-    // Note: These fixtures populate the "Admin Dashboard" with realistic looking
-    // charts and metrics so you don't look at empty screens.
-    await _seedCollection<KpiCardData>(
-      db: db,
-      log: log,
-      collectionName: 'kpi_card_data',
-      items: getKpiCardsFixturesData(),
-      getId: (item) => item.id,
-      toJson: (item) => item.toJson(),
-    );
-
-    await _seedCollection<ChartCardData>(
-      db: db,
-      log: log,
-      collectionName: 'chart_card_data',
-      items: getChartCardsFixturesData(),
-      getId: (item) => item.id,
-      toJson: (item) => item.toJson(),
-    );
-
-    await _seedCollection<RankedListCardData>(
-      db: db,
-      log: log,
-      collectionName: 'ranked_list_card_data',
-      items: getRankedListCardsFixturesData(),
-      getId: (item) => item.id,
-      toJson: (item) => item.toJson(),
-    );
-
     log.info('------------------------------------------------');
     log.info('✅ Demo Data Seeding Completed Successfully.');
     log.info('------------------------------------------------');
@@ -199,13 +132,3 @@ Future<void> _seedCollection<T>({
     );
   }
 }
-
-// --- Mock Fixture Accessors ---
-// In a real scenario, these would be imported from `package:core`.
-// Based on the context provided, we assume these functions exist in the core package.
-// If they are not exported, you would need to export them from `core.dart`.
-//
-// For this script to compile with the provided context, we assume `package:core/core.dart`
-// exports these functions.
-//
-// If they are missing, you simply need to add the exports to `core.dart`.
