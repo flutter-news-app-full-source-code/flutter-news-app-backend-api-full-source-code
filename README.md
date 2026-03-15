@@ -96,7 +96,6 @@ A standalone, model-agnostic intelligence engine that transforms raw data into s
 ### 🚀 High-Velocity Content Acquisition
 A robust, fault-tolerant orchestration pipeline focused purely on the rapid acquisition and staging of external data. It acts as the "mouth" of the system, capturing raw content at scale and normalizing it for downstream AI auditing.
 - **Multi-Provider Polymorphism:** Out-of-the-box support for **NewsAPI** and **MediaStack**, utilizing a unified interface that enables hot-swappable ingestion strategies via environment configuration.
-- **AI-Delegated Quality Control:** Replaces brittle, static validation logic with context-aware AI auditing. This ensures the acquisition layer remains lightweight and "uncloggable," delegating junk filtering and content enrichement to the Intelligence Engine.
 - **On-Demand Source Discovery:** Automatically synchronizes internal sources with provider catalogs using an intelligent host-matching heuristic, eliminating manual mapping overhead.
 - **Decoupled Staging Architecture:** Implements a high-performance "Worker-Queue" pattern. Content is captured rapidly and saved as `ingested` status, creating a clean separation of concerns: Ingestion handles raw volume, while the Intelligence Engine extracts high-fidelity value.
 - **Intelligent Cost Control:** Optimizes API credit usage through high-density batch processing and strictly enforced daily quotas.
